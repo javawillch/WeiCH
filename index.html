@@ -14,11 +14,8 @@
         <div id="app">
             <div id="section1">
                 <span>{{myName}}</span>
-<<<<<<< HEAD
                 <span>data22</span>
-=======
                 <span>data222</span>
->>>>>>> 63b15556310ae82ce6d75594e9f582df62eba86d
                 <span>data3</span>
                 <span>data4</span>
                 <span>data5</span>
@@ -28,6 +25,10 @@
                 <a href="\About">{{header.header2}}</a>
                 <a href="\Resume">{{header.header3}}</a>
                 <a href="\index2.html">Work</a>
+              
+                <!-- <a v-for="header in headers" href="{{header}}">
+                    {{header}}
+                </a> -->
             </div>
             <div id="section2">
                 <span>data1</span>
@@ -88,7 +89,14 @@
                             header1: 'Info',
                             header2: 'About',
                             header3: 'Resume',
-                        }
+                        },
+                        headers:[
+                            'Info',
+                            'About',
+                            'Resume',
+                            'Work',
+                        ],
+
                     }
                 })
             })()
