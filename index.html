@@ -16,11 +16,60 @@
                 overflow: visible;
                 vertical-align: -.125em;
             }
+
+            *{
+                margin: 0;
+                padding: 0;
+                list-style: none;   
+            }
+
+            .wrap{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .itemlst{
+                width: 100%;
+                max-width: 1440px;
+                margin:  auto;
+                display: flex;
+
+                background-color: #eee;
+                /* height: 440px; */
+                display: block;
+                color: #fff;
+                text-align: left;
+                background-size: cover;
+                background-position: 50%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                padding: 1vw;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                position: relative;
+                box-shadow: 0 10px 20px -10px rgba(0,0,0,.25);
+                transition-duration: .5s;
+                overflow: hidden;       
+            }
+
+            .itemlst .item{
+                width: 480px;
+                /* margin: 0 15px; */
+            }
+
+
+
+
         </style>
     </head>
     <body>
         <div id="app">
-            <div id="section1">
+            <div id="header">
                 <a href="/">
                     <h2>{{myName}}</h2>
                 </a>
@@ -34,42 +83,46 @@
                     {{header}}
                 </a> -->
             </div>
-            <div id="section2">
-                <span>data1</span>
-                <span>data2</span>
-                <span>data3</span>
-                <span>data4</span>
-                <span>data5</span>
-                <span>data6</span>
-                <span>data7</span>
-                <span>data8</span>
-                <span>data9</span>
-                <span>data10</span>
-            </div>
-            <div id="section3">
-                <span>data1</span>
-                <span>data2</span>
-                <span>data3</span>
-                <span>data4</span>
-                <span>data5</span>
-                <span>data6</span>
-                <span>data7</span>
-                <span>data8</span>
-                <span>data9</span>
-                <span>data10</span>
-            </div>
-            <div id="section4">
-                <span>data1</span>
-                <span>data2</span>
-                <span>data3</span>
-                <span>data4</span>
-                <span>data5</span>
-                <span>data6</span>
-                <span>data7</span>
-                <span>data8</span>
-                <span>data9</span>
-            </div>    
-            <div id="section5" v-cloak>
+
+                <div class="itemlst">
+                    <div class="item">
+                        <div class="pic">
+                            <video src="/static/BungeeJumping.mp4" muted="muted" autoplay="autoplay" loop="loop" width="100%"></video>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pic">
+                            <img src="/static/DataFlow.gif" width="100%"> 
+                        </div>
+                    </div>
+                    <div class="item">
+                    </div>
+                </div>
+                <div class="itemlst">
+                    <div class="item">
+                        <div class="pic">
+                            <img src="/static/Cube.gif" width="100%"> 
+                        </div>
+                    </div>
+                    <div class="item">
+                        <video src="/static/Skydiving.mp4" muted="muted" autoplay="autoplay" loop="loop" width="100%"></video>
+                    </div>
+                    <div class="item">
+                    </div>
+                </div>
+                <div class="itemlst">
+                    <div class="item">
+                        <div class="pic">
+                        </div>
+                    </div>
+                    <div class="item">
+                    </div>
+                    <div class="item">
+                        <video src="/static/SkyJumping.mp4" muted="muted" autoplay="autoplay" loop="loop" width="100%"></video>  
+                    </div>
+                </div>   
+
+            <div id="footer" v-cloak>
                 <!-- <p>Conditions of UsePrivacy NoticeInterest-Based Ads© {{year}}, {{company}}, Inc. or its affiliates</p> -->
                 <label>{{message}}{{myName}}, {{year}}</label>
                 <div>  
@@ -88,7 +141,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js'></script>
         <script> 
-            //section5 --> Vue
+            //footer --> Vue
             ;(function(){
                 var app = new Vue({
                     el: '#app',
@@ -114,3 +167,4 @@
         </script>
     </body>
 </html>
+
