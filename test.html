@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .banner{
+            width: 100%;
+            height: 100vh;
+            background-color: blueviolet;
+            background: 
+                linear-gradient(115deg, #7bf 50%, transparent 50%) center center / 100% 100%,
+                url("https://picsum.photos/1200/600?random=10") right center / auto 100%;
+        }
+        .container{
+            width: 100%;
+            max-width: 1440px;
+            margin:  auto;
+            height: 100%;
+        }
+        .banner-txt{
+            height: 100%;
+            /* 排列 */
+            display: flex;
+            /* 主軸 */
+            flex-direction: column;
+            justify-content: center;
+            /* 讓border不會滿版 */
+            align-items: flex-start;
+        }
+        .banner-txt h1{
+            font-size: 80px;
+            border-bottom: 1px solid #333;
+            font-weight: 900;
+        }
+        .banner-txt h1 small{
+            /* 為了換行 */
+            display: block;
+            font-size: 53px;
+            font-weight: 700;
+        }
+        .banner-txt h2{
+            font-size: 50px;
+            font-weight: 700;
+        }   
+        .banner-txt p{
+            font-size: 30px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="container">
+            <div class="banner-txt">
+                <h1>
+                    金魚都能懂的
+                    <small>
+                        這個網頁怎麼切
+                    </small>
+                </h1>
+                <h2>圖文滿版區塊</h2>
+                <p>這畫面很常見
+                    <br>金魚也會切吧
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
