@@ -1,3 +1,7 @@
+/* *{
+  outline: 1px solid #0f0;
+} */
+
 body {
   background: #1d1f20;
   overflow: hidden;
@@ -6,7 +10,8 @@ body {
 .wrapper {
   perspective: 800px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0px 30vh;
   filter: blur(1.5px);
 }
 
