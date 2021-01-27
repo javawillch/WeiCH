@@ -28,6 +28,10 @@
                 /* line-height: 2rem; */
 
                 min-height: 100vh;
+                margin: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 200px;
             }            
             
             .page-about h1{
@@ -54,7 +58,11 @@
 
             /* ----------------------------header and footer---------------------------- */
             .header{
-                display: flex;         
+                display: flex;   
+                margin: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-weight: 700;
             }
 
             .header .selfname{
@@ -89,11 +97,29 @@
             }
 
             /* ----------------------------other detail---------------------------- */
-            a {
+            .header a:link{
+                /* //設定還沒有瀏覽過的連結 */
+                text-decoration:none;
+                background-color:#1d1f20;
+            }
+            .header a:visited {
+                /* //設定已經瀏覽過的連結 */
                 text-decoration:none;
             }
+            .header .subroute a:hover, .header .subroute a:active{
+                /* //設定滑鼠移經的連結 */
+                /* //設定正在點選的連結 */
+                text-decoration: none;
+                background-color: #fff;
+                color: #000;;
+            }
+
+            .header a{
+                text-decoration: none;
+                color: #fff;
+            }
            
-            .svg-inline--fa {
+            .svg-inline--fa{
                 display: inline-block;
                 font-size: inherit;
                 height: 1em;
