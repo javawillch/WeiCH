@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Document</title>
         <style>
+            .router-link-exact-active {
+                background-color: blueviolet;
+                color: white;
+            }            
             /* ----------------------------debug---------------------------- */
             /* *{
                 outline: 1px solid #f00;
@@ -179,6 +183,10 @@
                     <a href="/pages/about.html">{{header.header2}}</a>
                     <a href="/static/Resume_WeiCH.pdf">{{header.header3}}</a>
                     <a href="/p5_mouse.html">Work</a>
+                    <router-link to="/">page0 -Index</router-link>
+                    <router-link to="/work">page1 -work</router-link>
+                    <router-link to="/about">page2 -about</router-link>
+
                 </div>             
                 <!-- <a v-for="header in headers" href="{{header}}">
                     {{header}}
@@ -276,11 +284,71 @@
         </div>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.4.2/vue-router.js' integrity='sha512-7xKaIkfxV1cchjztq0ndNfZubdlTIAj+FpBgO8aiADTDQjRiOk8lGWBPxYu2Cy9dCODIyJka5BIGQ89YjR1n0g==' crossorigin='anonymous'></script>     
         <script> 
             //footer --> Vue
             ;(function(){
+
+                const index = {
+                    template: '<div>index</div>',
+                }
+
+                const work = {
+                    template: '<div>work</div>',
+                } 
+
+                const about = {
+                    template: '<div>about</div>',
+                }       
+
+                // Dynamic Route Matching
+                const user = {
+                    template: '<div>user {{ $route.params.id}}</div>',
+                }
+
+                const error = {
+                    template: '<div>404 not found</div>',
+                }
+
+                const router = new VueRouter({
+                    routes: [
+                        {
+                            path: '/',
+                            component: index, 
+                        },                
+                        {
+                            path: '/work',
+                            component: work, 
+                        },
+                        {
+                            path: '/about',
+                            component: about, 
+                        },
+                
+                        // Dynamic Route Matching
+                        {
+                            path: '/user/:id', 
+                            component: user,
+                        },
+                        {
+                            path: '/404',
+                            component: error,
+
+                        },
+                        {
+                            path: '*',
+                            redirect: '/404',
+                        },
+                        {
+                            path: '*',
+                            component: error,
+                        },
+                    ],
+                })
+
                 var app = new Vue({
                     el: '#app',
+                    router,
                     data: {
                         message: 'Copyright© ', 
                         myName: 'Wei Chen-Huang',
