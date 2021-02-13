@@ -1,7 +1,3 @@
-.router-link-exact-active {
-    background-color: blueviolet;
-    color: white;
-}            
 /* ----------------------------debug---------------------------- */
 /* *{
     outline: 1px solid #f00;
@@ -163,3 +159,17 @@ a {
     overflow: visible;
     vertical-align: -.125em;
 }
+
+/* ----------------------------Vue Relative---------------------------- */
+.router-link-exact-active {
+    background-color: blueviolet;
+    color: white;
+}       
+
+/* ----------------------------Other---------------------------- */
+.pic {
+    background-image: url(/static/SkyJumping.gif);
+    background-color: #ffaa44;
+    height: 360px;
+}
+     
