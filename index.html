@@ -20,7 +20,7 @@
                     <router-link to="/">page0 -Index</router-link>
                     <router-link to="/work">page1 -work</router-link>
                     <router-link to="/about">page2 -about</router-link>
-
+                    <router-link to="/user">page3 -user</router-link>
                 </div>             
                 <!-- <a v-for="header in headers" href="{{header}}">
                     {{header}}
@@ -176,14 +176,14 @@
                             component: error,
 
                         },
-                        {
-                            path: '*',
-                            redirect: '/404',
-                        },
-                        {
-                            path: '*',
-                            component: error,
-                        },
+                        // {
+                        //     path: '*',
+                        //     redirect: '/404',
+                        // },
+                        // {
+                        //     path: '*',
+                        //     component: error,
+                        // },
                     ],
                 })
 
