@@ -21,6 +21,8 @@
                     <router-link to="/work">page1 -work</router-link>
                     <router-link to="/about">page2 -about</router-link>
                     <router-link to="/user">page3 -user</router-link>
+
+                    <router-link :to="{name:'about'}">about</router-link>             
                 </div>             
                 
                 <!-- <a v-for="header in headers" href="{{header}}">
@@ -123,6 +125,7 @@
                 </div>
             </div>
             <router-view></router-view>
+            <router-view name="header"></router-view>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.4.2/vue-router.js' integrity='sha512-7xKaIkfxV1cchjztq0ndNfZubdlTIAj+FpBgO8aiADTDQjRiOk8lGWBPxYu2Cy9dCODIyJka5BIGQ89YjR1n0g==' crossorigin='anonymous'></script>     
@@ -131,6 +134,30 @@
 
             //footer --> Vue
             ;(function(){
+
+                //bug: can not read myName
+                const header = {
+                    template:`
+                    <div class="header">
+                        <a class="selfname" href="/">
+                            <h2>{{myName}}</h2>
+                        </a>
+                        <div class="subroute">
+                            <a href="/index.html">{{header.header1}}</a>
+                            <a href="/pages/about.html">{{header.header2}}</a>
+                            <a href="/static/Resume_WeiCH.pdf">{{header.header3}}</a>
+                            <a href="/p5_mouse.html">Work</a>
+                            <router-link to="/">page0 -Index</router-link>
+                            <router-link to="/work">page1 -work</router-link>
+                            <router-link to="/about">page2 -about</router-link>
+                            <router-link to="/user">page3 -user</router-link>
+
+                            <router-link :to="{name:'about'}">about</router-link>             
+                        </div>     
+                    </div>                
+                    `
+                }
+
 
                 const index = {
                     template: '<div>index</div>',
@@ -166,7 +193,10 @@
                     routes: [
                         {
                             path: '/',
-                            component: index, 
+                            components: {
+                                default: index,
+                                header: header,
+                            }
                         },                
                         {
                             path: '/work',
@@ -174,8 +204,9 @@
                         },
                         {
                             path: '/about',
-                            redirect: "#/pages/about.html",
+                            // redirect: "#/pages/about.html",
                             component: about, 
+                            name: 'about',
                         },
                 
                         // Dynamic Route Matching
