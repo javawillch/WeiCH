@@ -1,2 +1,2 @@
 # WeiCH
-# [github page](https://javawillch.github.io/WeiCH)
+# [GitHub page](https://javawillch.github.io/WeiCH)
